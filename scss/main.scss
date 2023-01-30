@@ -23,11 +23,15 @@ body{
   justify-content: center;
   flex-flow: row wrap;
   .form-item{
+    align-items: center;
+    display: flex;
     margin-right: 20px;
     label{
+      display: block;
       margin-right: 5px;
     }
     input{
+      display: block;
       border: 1px solid $color-border;
       padding: 5px 8px;
       @include border-radius(3px);
@@ -46,6 +50,31 @@ body{
   background-color: white;
   @extend .btn-like;
   @include border-radius(3px);
+}
+
+@media (max-width: 450px) {
+  .container{
+    flex-flow: column nowrap;
+  }
+  .form{
+    .form-item{
+      width: 100%;
+      display: flex;
+      margin-bottom: 20px;
+      margin-right: 0;
+      label{
+        margin-right: 0;
+        flex-shrink: 0;
+        width: 50%;
+        text-align: left;
+      }
+      input{
+        flex-shrink: 0;
+        width: 50%;
+        text-align: right;
+      }
+    }
+  }
 }
 
 
