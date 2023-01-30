@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name='description' content="行车花费计算，油耗，汽车">
+    <meta name='keywords' content="行车花费计算，油耗，汽车">
+    <title>行车花费计算</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="scss/main.css?v=20221227162051">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <meta name="theme-color"
+          content="#ffffff"
+          media="(prefers-color-scheme: light)">
+    <script src="../../lib/js/vue_2.66.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app" v-cloak>
+    <div class="result mb-5">总共花费： {{result.toFixed(2)}}</div>
+
+    <div class="form">
+        <div class="form-item">
+            <label for="oilCost100km">百公里油耗</label><input id="oilCost100km" type="number" v-model.number="oilCost100km" placeholder="百公里油耗">
+        </div>
+        <div class="form-item">
+            <label for="oilPrise">燃油单价</label><input id="oilPrise" type="number" v-model.number="oilPrise" placeholder="1L单价">
+        </div>
+        <div class="form-item">
+            <label for="distance">总公里数</label><input id="distance" type="number" v-model.number="distance" placeholder="总公里数">
+        </div>
+        <div class="form-item">
+            <label for="highroadCost">高速过路费</label><input id="highroadCost" type="number" v-model.number="highroadCost" placeholder="高速过路费">
+        </div>
+    </div>
+
+    <button class="btn mt-5" @click="compute">计算</button>
+</div>
+
+<script src="js/app.js?v=20230130133953"></script>
+
+
+</body>
+</html>

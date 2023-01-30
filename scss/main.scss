@@ -1,0 +1,52 @@
+@import "variables";
+@import "reset";
+@import "utility";
+@import "gutter";
+
+body{
+  font-size: 18px;
+  background-color: $bg-highlight;
+  font-family: "PingFang SC", "Microsoft Yahei UI", "Microsoft Yahei", "Helvetica", sans-serif;
+}
+
+.container{
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+
+.form{
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  .form-item{
+    margin-right: 20px;
+    label{
+      margin-right: 5px;
+    }
+    input{
+      border: 1px solid $color-border;
+      padding: 5px 8px;
+      @include border-radius(3px);
+    }
+  }
+}
+
+.result{
+  font-size: 40px;
+}
+
+.btn{
+  width: 100px;
+  border: 1px solid $color-border;
+  padding: 5px 10px;
+  background-color: white;
+  @extend .btn-like;
+  @include border-radius(3px);
+}
+
+
+@import "dark";
