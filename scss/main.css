@@ -395,6 +395,130 @@ tt {
   padding: 35px !important;
 }
 
+.mt-8 {
+  margin-top: 40px !important;
+}
+
+.mb-8 {
+  margin-bottom: 40px !important;
+}
+
+.ml-8 {
+  margin-left: 40px !important;
+}
+
+.mr-8 {
+  margin-right: 40px !important;
+}
+
+.m-8 {
+  margin: 40px !important;
+}
+
+.pt-8 {
+  padding-top: 40px !important;
+}
+
+.pb-8 {
+  padding-bottom: 40px !important;
+}
+
+.pl-8 {
+  padding-left: 40px !important;
+}
+
+.pr-8 {
+  padding-right: 40px !important;
+}
+
+.p-8 {
+  padding: 40px !important;
+}
+
+.mt-9 {
+  margin-top: 45px !important;
+}
+
+.mb-9 {
+  margin-bottom: 45px !important;
+}
+
+.ml-9 {
+  margin-left: 45px !important;
+}
+
+.mr-9 {
+  margin-right: 45px !important;
+}
+
+.m-9 {
+  margin: 45px !important;
+}
+
+.pt-9 {
+  padding-top: 45px !important;
+}
+
+.pb-9 {
+  padding-bottom: 45px !important;
+}
+
+.pl-9 {
+  padding-left: 45px !important;
+}
+
+.pr-9 {
+  padding-right: 45px !important;
+}
+
+.p-9 {
+  padding: 45px !important;
+}
+
+.mt-10 {
+  margin-top: 50px !important;
+}
+
+.mb-10 {
+  margin-bottom: 50px !important;
+}
+
+.ml-10 {
+  margin-left: 50px !important;
+}
+
+.mr-10 {
+  margin-right: 50px !important;
+}
+
+.m-10 {
+  margin: 50px !important;
+}
+
+.pt-10 {
+  padding-top: 50px !important;
+}
+
+.pb-10 {
+  padding-bottom: 50px !important;
+}
+
+.pl-10 {
+  padding-left: 50px !important;
+}
+
+.pr-10 {
+  padding-right: 50px !important;
+}
+
+.p-10 {
+  padding: 50px !important;
+}
+
+@font-face {
+  font-family: "JetBrains";
+  src: url("../fonts/JetBrainsMono-Regular.otf");
+}
 body {
   font-size: 18px;
   background-color: #eeeeee;
@@ -409,63 +533,150 @@ body {
   flex-flow: column nowrap;
 }
 
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin-right: 50px;
+}
+.logo img {
+  width: 150px;
+  display: block;
+}
+
 .form {
   display: flex;
   justify-content: center;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
 }
 .form .form-item {
   align-items: center;
   display: flex;
-  margin-right: 20px;
+  margin-bottom: 10px;
+  font-family: "JetBrains", sans-serif;
 }
 .form .form-item label {
+  text-align: right;
   display: block;
   margin-right: 5px;
+  width: 100px;
 }
 .form .form-item input {
+  width: 200px;
+  margin-left: 10px;
+  text-align: right;
   display: block;
   border: 1px solid #dadada;
   padding: 5px 8px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form .form-item input:focus {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  border-color: #007AFF;
+  outline: solid 3px rgba(0, 122, 255, 0.2);
+}
+.form .form-item .flag {
+  margin-left: 5px;
+  width: 80px;
+}
+
+.combine {
+  padding: 0 40px;
+}
+.combine img {
+  display: block;
+  width: 40px;
 }
 
 .result {
-  font-size: 40px;
+  text-align: left;
+  font-family: "JetBrains", sans-serif;
+  font-size: 50px;
+  width: 200px;
+}
+.result.result-top {
+  display: none;
+}
+.result.result-bottom {
+  display: block;
 }
 
 .btn {
   width: 100px;
   border: 1px solid #dadada;
   padding: 5px 10px;
-  background-color: white;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  color: white;
+  background-color: #00b56b;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 @media (max-width: 450px) {
   .container {
+    padding: 15px;
+    font-size: 16px;
+    justify-content: flex-start;
     flex-flow: column nowrap;
+  }
+  .content {
+    flex-flow: column nowrap;
+  }
+  .logo {
+    padding: 30px;
+    margin-right: 0;
+  }
+  .logo img {
+    width: 100px;
   }
   .form .form-item {
     width: 100%;
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     margin-right: 0;
   }
   .form .form-item label {
     margin-right: 0;
     flex-shrink: 0;
-    width: 50%;
+    width: 30%;
     text-align: left;
   }
   .form .form-item input {
     flex-shrink: 0;
-    width: 50%;
+    width: 40%;
     text-align: right;
+  }
+  .form .form-item .flag {
+    width: 20%;
+  }
+  .combine {
+    display: none;
+  }
+  .result {
+    text-align: center;
+    width: 100%;
+  }
+  .result.result-top {
+    display: block;
+    padding-bottom: 40px;
+  }
+  .result.result-bottom {
+    display: none;
   }
 }
 @media (prefers-color-scheme: dark) {

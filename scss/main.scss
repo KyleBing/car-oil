@@ -2,6 +2,7 @@
 @import "reset";
 @import "utility";
 @import "gutter";
+@import "font";
 
 body{
   font-size: 18px;
@@ -17,64 +18,145 @@ body{
   flex-flow: column nowrap;
 }
 
+.content{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.logo{
+  margin-right: 50px;
+  img{
+    width: 150px;
+    display: block;
+  }
+}
 
 .form{
   display: flex;
   justify-content: center;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+
   .form-item{
     align-items: center;
     display: flex;
-    margin-right: 20px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains', sans-serif;
     label{
+      text-align: right;
       display: block;
       margin-right: 5px;
+      width: 100px;
     }
     input{
+      width: 200px;
+      margin-left: 10px;
+      text-align: right;
       display: block;
       border: 1px solid $color-border;
       padding: 5px 8px;
-      @include border-radius(3px);
+      @include border-radius(5px);
+      @include transition(all 0.3s);
+      &:focus{
+        @include transition(all 0.3s);
+        border-color: $blue;
+        outline: solid 3px transparentize($blue, 0.8);
+      }
+    }
+    .flag{
+      margin-left: 5px;
+      width: 80px;
     }
   }
 }
 
+.combine{
+  padding: 0 40px;
+  img{
+    display: block;
+    width: 40px;
+  }
+}
+
 .result{
-  font-size: 40px;
+  text-align: left;
+  font-family: 'JetBrains', sans-serif;
+  font-size: 50px;
+  width: 200px;
+  &.result-top {
+    display: none;
+  }
+  &.result-bottom {
+    display: block;
+  }
 }
 
 .btn{
   width: 100px;
   border: 1px solid $color-border;
   padding: 5px 10px;
-  background-color: white;
+  color: white;
+  background-color: $green;
   @extend .btn-like;
-  @include border-radius(3px);
+  @include border-radius(5px);
 }
 
 @media (max-width: 450px) {
   .container{
+    padding: 15px;
+    font-size: 16px;
+    justify-content: flex-start;
     flex-flow: column nowrap;
+  }
+  .content{
+    flex-flow: column nowrap;
+  }
+  .logo{
+    padding: 30px;
+    margin-right: 0;
+    img{
+      width: 100px;
+    }
   }
   .form{
     .form-item{
       width: 100%;
       display: flex;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       margin-right: 0;
       label{
         margin-right: 0;
         flex-shrink: 0;
-        width: 50%;
+        width: 30%;
         text-align: left;
       }
       input{
         flex-shrink: 0;
-        width: 50%;
+        width: 40%;
         text-align: right;
+      }
+      .flag{
+        width: 20%;
       }
     }
   }
+
+  .combine{
+    display: none;
+  }
+
+  .result{
+    text-align: center;
+    width: 100%;
+    &.result-top {
+      display: block;
+      padding-bottom: 40px;
+    }
+    &.result-bottom {
+      display: none;
+    }
+  }
+
 }
 
 

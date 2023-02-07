@@ -9,8 +9,19 @@ let app = new Vue({
         highroadCost: 0, // 高速过路费
 
         result: 0,  // 总花费
+
+        insets: {
+            height: 800,
+            width: 1920
+        }
     },
     mounted() {
+        this.$nextTick(()=>{
+            this.insets = {
+                height: innerHeight,
+                width: innerWidth
+            }
+        })
         // 载入之前的配置
         this.loadConfig()
         // onresize
@@ -48,7 +59,21 @@ let app = new Vue({
             }
         }
     },
-    computed: {}
+    computed: {},
+    watch: {
+        oilCost100km(){
+            this.compute()
+        },
+        oilPrise(){
+            this.compute()
+        },
+        distance(){
+            this.compute()
+        },
+        highroadCost(){
+            this.compute()
+        },
+    }
 })
 
 document.addEventListener('touchstart', () => {
